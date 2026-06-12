@@ -13,7 +13,7 @@ STM32 (existing Modbus RTU slave)
 Folders:
 
 - `MyPC`: PC-side Modbus TCP master program.
-- `LPB3568`: board-side Modbus TCP to RTU gateway.
+- `LPB3568_TCP`: board-side Modbus TCP to RTU gateway.
 
 The STM32 register map stays the same as your existing RTU project:
 
@@ -28,7 +28,7 @@ The STM32 register map stays the same as your existing RTU project:
 On LPB3568:
 
 ```sh
-cd ModbusTCP/LPB3568
+cd ModbusTCP/LPB3568_TCP
 make
 sudo ./lpb3568_modbus_tcp_gateway /dev/ttyS7 9600 502
 ```
@@ -51,3 +51,5 @@ mypc_modbus_tcp_master.exe <lpb3568-ip> 502 1
 
 The final `1` is the STM32 RTU slave id. It is sent as the Modbus TCP unit id,
 and LPB3568 forwards it to the RTU bus.
+
+For a step-by-step Chinese guide, see `使用文档.md`.
